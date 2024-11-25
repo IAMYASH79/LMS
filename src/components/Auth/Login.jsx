@@ -6,7 +6,10 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("hello guys");
+    console.log("hello guys", email);
+    console.log(password);
+    setEmail("")
+    setPassword("")
   };
 
   return (
@@ -29,6 +32,10 @@ const Login = () => {
             placeholder="Enter your Email"
           />
           <input
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             required
             className="border-2 border-emerald-700 py-3 px-4 text-2xl outline-none bg-transparent rounded-full placeholder:text-gray-500 mt-4"
             type="Password"
